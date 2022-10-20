@@ -1,0 +1,24 @@
+# Architecture Design:
+
+From the current application design, I see that we have four main services that can be
+decoupled and redesigned as microservices.
+
+1- Front-end service: this service is running the frontend code and can be running as a standalone service.
+2- Persons service: this service is the least dependent service which is only
+                    responsible for adding new users to the application database
+                    and also retrieving users from the database.
+3- Location service: this service is only responsible for adding location data
+                     to the locations table for each user and also retrieving location data from the table.
+4- Connection service: this service contains some business logic and it depends on the location service
+                       for processing the location data before inserting it to the database.
+
+
+# Design Decisions Justification:
+Location data is being retrieved from the mobile devices as a streaming data.
+So, it needs a streaming service that can be able to handle massive number of data points coming at the same time.
+I see that Kafka service would fit best here in this use case.
+Additionally, for managing the long messages queue in the Kafka service, I would use gRPC message passing technique to
+consume to the data from the Kafka message queue.
+For Persons and Connections services with the Frontend service, I would keep using the REST technique
+because there is no need to complicate things without having a critical use case that needs more
+advanced message passing techniques.
