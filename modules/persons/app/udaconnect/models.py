@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime
 
-from modules.persons.app import db  # noqa
+from app import db  # noqa
 from sqlalchemy import Column, Integer, String
 
 
