@@ -1,6 +1,6 @@
-from modules.persons.app.udaconnect.models import Person
-from modules.persons.app.udaconnect.schemas import PersonSchema
-from modules.persons.app.udaconnect.services import PersonService
+from models import Person
+from schemas import PersonSchema
+from services import PersonService
 from flask import request
 from flask_accepts import accepts, responds
 from flask_restx import Namespace, Resource

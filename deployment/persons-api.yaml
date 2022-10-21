@@ -31,7 +31,7 @@ spec:
         service: persons-api
     spec:
       containers:
-      - image: abasha93/persons-api:latest
+      - image: abasha93/udaconnect-persons:latest
         name: persons-api
         imagePullPolicy: Always
         env:

@@ -1,10 +1,10 @@
 import logging
 from typing import Dict, List
-from modules.persons.app import db
-from modules.persons.app.udaconnect.models import Person
+from ...app import db
+from models import Person
 
 logging.basicConfig(level=logging.WARNING)
-logger = logging.getLogger("udaconnect-api")
+logger = logging.getLogger("persons-api")
 
 
 class PersonService:
