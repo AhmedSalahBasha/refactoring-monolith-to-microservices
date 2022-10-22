@@ -46,6 +46,5 @@ def keep_server_alive(server, sleep_sec=86400):
 
 
 if __name__ == "__main__":
-    logging.basicConfig()
     run_grpc_server()
 

@@ -1,0 +1,5 @@
+grpcio==1.50.0
+protobuf==4.21.8
+grpcio-tools==1.50.0
+kafka-python==2.0.2
+psycopg2-binary==2.8.5
