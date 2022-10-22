@@ -9,7 +9,7 @@ spec:
   - name: "5555"
     port: 5555
     targetPort: 5555
-    nodePort: 30003
+    nodePort: 30007
   selector:
     service: location-producer
   type: NodePort

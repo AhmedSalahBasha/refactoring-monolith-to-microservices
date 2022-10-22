@@ -5,7 +5,7 @@ import location_pb2_grpc
 
 print("Sending sample payload using gRPC...")
 
-channel = grpc.insecure_channel("localhost:30003")
+channel = grpc.insecure_channel("localhost:30007")
 stub = location_pb2_grpc.LocationServiceStub(channel)
 
 location = location_pb2.LocationMessage(

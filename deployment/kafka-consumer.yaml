@@ -9,7 +9,7 @@ spec:
   - name: "9093"
     port: 9093
     targetPort: 9093
-    nodePort: 30001
+    nodePort: 30003
   selector:
     service: kafka-consumer
   type: NodePort
