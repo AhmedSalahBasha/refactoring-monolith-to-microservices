@@ -35,16 +35,16 @@ spec:
       - name: zookeeper
         image: digitalwonderland/zookeeper
         env:
-          - name: ALLOW_ANONYMOUS_LOGIN
-            value: "yes"
-          - name: "auth.enabled"
-            value: "false"
-          imagePullPolicy: Always
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "64m"
-            limits:
-              memory: "256Mi"
-              cpu: "256m"
-          restartPolicy: Always
+        - name: ALLOW_ANONYMOUS_LOGIN
+          value: "yes"
+        - name: "auth.enabled"
+          value: "false"
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "64m"
+          limits:
+            memory: "256Mi"
+            cpu: "256m"
+      restartPolicy: Always
