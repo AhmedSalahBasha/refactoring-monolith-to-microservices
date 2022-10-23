@@ -9,7 +9,7 @@ from kafka import KafkaProducer
 
 producer = KafkaProducer(bootstrap_servers="my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092",
                          value_serializer=lambda v: json.dumps(v).encode('utf-8'),
-                         api_version=(0, 10, 2)
+                         api_version=(0, 10, 1)
                          )
 
 
