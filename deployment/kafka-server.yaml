@@ -41,6 +41,8 @@ spec:
           value: "PLAINTEXT://my-cluster-kafka-bootstrap.kafka.svc.cluster.local:9092"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes"
+        - name: KAFKA_BROKER_ID
+          value: "1234234"
         - name: "zookeeper.enabled"
           value: "false"
         resources:
