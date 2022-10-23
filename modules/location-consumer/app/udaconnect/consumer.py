@@ -7,6 +7,7 @@ import config
 
 consumer = KafkaConsumer(
     config.KAFKA_TOPIC,
+    api_version=(0, 10, 1),
     bootstrap_servers=config.KAFKA_SERVER,
 )
 
