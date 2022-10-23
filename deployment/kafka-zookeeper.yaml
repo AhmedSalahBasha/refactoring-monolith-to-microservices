@@ -22,7 +22,7 @@ metadata:
     service: zookeeper
   name: zookeeper
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       service: zookeeper
@@ -33,18 +33,9 @@ spec:
     spec:
       containers:
       - name: zookeeper
-        image: digitalwonderland/zookeeper
-        env:
-        - name: ALLOW_ANONYMOUS_LOGIN
-          value: "yes"
-        - name: "auth.enabled"
-          value: "false"
-        imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "64m"
-          limits:
-            memory: "256Mi"
-            cpu: "256m"
+        image: wurstmeister/zookeeper
+        imagePullPolicy: IfNotPresent
+          name: zookeeper
+          ports:
+            - containerPort: 2181
       restartPolicy: Always
