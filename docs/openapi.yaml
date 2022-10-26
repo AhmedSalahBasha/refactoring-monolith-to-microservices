@@ -1,0 +1,113 @@
+swagger: '2.0'
+info:
+  description: UdaConnect Microservices
+  version: '1.0.0'
+  title: UdaConnect API
+basePath: /
+paths:
+  /api/persons:
+    get:
+      summary: Retrieve all persons
+      operationId: get_persons_resource
+      description: Get all persons information from database
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: "#/components/schemas/Person"
+        "404":
+          description: Bad request! No data found!
+      tags:
+        - Persons
+    post:
+      summary: Add new person
+      operationId: post_persons_resource
+      description: Insert new person data into the database
+      responses:
+        '200':
+          description: Success
+      tags:
+        - Persons
+  /api/persons/{person_id}:
+    parameters:
+      - in: path
+        description: Unique ID for a given Person
+        name: person_id
+        required: true
+        type: string
+    get:
+      summary: Retrieve all persons
+      operationId: get_person_resource
+      description: Success
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: "#/components/schemas/Person"
+      tags:
+        - Persons
+  /api/persons/{person_id}/connection:
+    parameters:
+      - in: query
+        description: Proximity to a given user in meters
+        name: distance
+        type: string
+      - in: query
+        description: Upper bound of date range
+        name: end_date
+        type: string
+      - in: query
+        description: Lower bound of date range
+        name: start_date
+        type: string
+      - name: person_id
+        in: path
+        required: true
+        type: string
+    get:
+      summary: Retrieve all connections with certain person
+      operationId: get_connection_data_resource
+      description: Get all persons who have a connection with the provided persons id.
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: "#/components/schemas/Person"
+      tags:
+        - Connection
+components:
+  schemas:
+    Person:
+      type: object
+      required:
+        - id
+        - first_name
+        - last_name
+        - company_name
+      properties:
+        id:
+          type: int
+          example: 1
+        first_name:
+          type: string
+          example: "Ahmed"
+        last_name:
+          type: string
+          example: "Basha"
+        company_name:
+          type: string
+          example: "Flixbus"
+produces:
+  - application/json
+consumes:
+  - application/json
+tags:
+  - name: Persons
+    description: Persons Microservice
+  - name: Connection
+    description: Connection Microservice
+responses:
+  ParseError:
+    description: When a mask can't be parsed
+  MaskError:
+    description: When any error occurs on mask
