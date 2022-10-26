@@ -1,0 +1,21 @@
+# gRPC Documentation:
+
+According to my microservice design, the gRPC is being used along with Kafka cluster to receive a location data
+from the LocationProducer and send it to LocationConsumer.
+
+The gRPC implementation for sending a request exists in `modules/location-producer/app/udaconnect/server.py`.
+
+This python script which is responsible for sending the location data to `location-consumer` module through gRPC using the
+`LocationMessage` object which is defined the `location.proto` file in the same directory.
+
+'''
+message LocationMessage {
+    int32 person_id = 1;
+    float longitude = 2;
+    float latitude = 3;
+}
+
+service LocationService {
+    rpc Create (LocationMessage) returns (LocationMessage);
+}
+'''
