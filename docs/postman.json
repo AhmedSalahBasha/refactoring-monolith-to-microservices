@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "24ffb2f7-4790-4a3b-86ee-9ba052974f99",
+		"name": "UdaConnect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1382474"
+	},
+	"item": [
+		{
+			"name": "localhost:30009/api/persons",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Ahmed\",\n    \"last_name\": \"Basha\",\n    \"company_name\": \"Flixbus\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:30009/api/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "30009",
+					"path": [
+						"api",
+						"persons"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "first_name",
+							"value": "Ahmed",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "Basha",
+							"disabled": true
+						},
+						{
+							"key": "company_name",
+							"value": "Flixbus",
+							"disabled": true
+						}
+					]
+				},
+				"description": "get persons"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:30009/api/persons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Ahmed\",\n    \"last_name\": \"Basha\",\n    \"company_name\": \"Flixbus\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:30009/api/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "30009",
+					"path": [
+						"api",
+						"persons"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "first_name",
+							"value": "Ahmed",
+							"disabled": true
+						},
+						{
+							"key": "last_name",
+							"value": "Basha",
+							"disabled": true
+						},
+						{
+							"key": "company_name",
+							"value": "Flixbus",
+							"disabled": true
+						}
+					]
+				},
+				"description": "add new person"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:30009/api/persons/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:30009/api/persons/2",
+					"host": [
+						"localhost"
+					],
+					"port": "30009",
+					"path": [
+						"api",
+						"persons",
+						"2"
+					]
+				},
+				"description": "get person by id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:30008/api/persons/9/connection?start_date=2019-06-30&end_date=2020-06-30&distance=10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:30008/api/persons/9/connection?start_date=2019-06-30&end_date=2020-06-30&distance=10",
+					"host": [
+						"localhost"
+					],
+					"port": "30008",
+					"path": [
+						"api",
+						"persons",
+						"9",
+						"connection"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2019-06-30"
+						},
+						{
+							"key": "end_date",
+							"value": "2020-06-30"
+						},
+						{
+							"key": "distance",
+							"value": "10"
+						}
+					]
+				},
+				"description": "get connections for certain person"
+			},
+			"response": []
+		}
+	]
+}
